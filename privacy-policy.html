@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VoteAble · Privacy Policy | Secure Election Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #eef2f7 0%, #f8fafc 100%);
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .policy-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            transition: all 0.2s ease;
+        }
+
+        .policy-header {
+            background: linear-gradient(135deg, #0f2b3d 0%, #1b4a6e 100%);
+            padding: 2.5rem 2rem 2rem 2rem;
+            color: white;
+            border-bottom: 4px solid #f4c542;
+        }
+
+        .badge-date {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(2px);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+        }
+
+        .policy-header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0.5rem 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .policy-header h1 i {
+            font-size: 2rem;
+            color: #f4c542;
+        }
+
+        .effective-tag {
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.9;
+            border-left: 3px solid #f4c542;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #f9fafc;
+            border-bottom: 1px solid #e4e9f0;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #2c5a7a;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-btn i {
+            font-size: 0.8rem;
+        }
+
+        .nav-btn:hover {
+            background: #e6edf4;
+            color: #0f2b3d;
+            transform: translateY(-1px);
+        }
+
+        .policy-content {
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+
+        .policy-section {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.2rem 1.8rem 1.5rem 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #edf2f7;
+            transition: all 0.2s;
+        }
+
+        .policy-section:hover {
+            border-color: #cbdde9;
+            box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.08);
+        }
+
+        .policy-section h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #0f2b3d;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-left: 5px solid #f4c542;
+            padding-left: 1rem;
+        }
+
+        .policy-section h2 i {
+            color: #1b4a6e;
+            font-size: 1.5rem;
+        }
+
+        .policy-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+            color: #2c3e50;
+        }
+
+        .policy-section p, .policy-section li {
+            color: #2d3e50;
+            font-weight: 400;
+        }
+
+        ul {
+            padding-left: 1.6rem;
+            margin: 0.8rem 0;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+
+        .badge-tech {
+            background: #eef2ff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #1e3a5f;
+        }
+
+        .consent-box {
+            background: #fef9e6;
+            border-left: 4px solid #f4c542;
+            padding: 1.2rem 1.5rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            color: #5b6e8c;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-email {
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: monospace;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1b4a6e;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            border: none;
+            z-index: 100;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #0f2b3d;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            .policy-content {
+                padding: 1.2rem;
+            }
+            .policy-section {
+                padding: 1rem;
+            }
+            .policy-header h1 {
+                font-size: 1.8rem;
+            }
+            .quick-nav {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        .nav-btn:focus-visible {
+            outline: 2px solid #f4c542;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="policy-container">
+    <div class="policy-header">
+        <div class="badge-date">
+            <i class="fas fa-shield-alt"></i>  Officer-grade data protection
+        </div>
+        <h1>
+            <i class="fas fa-vote-yea"></i> 
+            VoteAble · Privacy & Data Ethics
+        </h1>
+        <div class="effective-tag">
+            <i class="far fa-calendar-alt"></i>  Effective date: 24th March 2026  |  <i class="fas fa-user-check"></i>  For BLO, RO, ARO, Super Admin
+        </div>
+    </div>
+
+    <div class="quick-nav" id="quickNav">
+        <button class="nav-btn" data-section="infoCollect"><i class="fas fa-database"></i> Information</button>
+        <button class="nav-btn" data-section="howUse"><i class="fas fa-chart-line"></i> Usage</button>
+        <button class="nav-btn" data-section="locationUsage"><i class="fas fa-map-marker-alt"></i> Location</button>
+        <button class="nav-btn" data-section="thirdParty"><i class="fas fa-plug"></i> Third-Party</button>
+        <button class="nav-btn" data-section="storage"><i class="fas fa-lock"></i> Security</button>
+        <button class="nav-btn" data-section="userRights"><i class="fas fa-user-lock"></i> Your Rights</button>
+        <button class="nav-btn" data-section="contact"><i class="fas fa-envelope"></i> Contact</button>
+    </div>
+
+    <div class="policy-content">
+        <div id="infoCollect" class="policy-section">
+            <h2><i class="fas fa-clipboard-list"></i> 1. Information We Collect</h2>
+            <h3><i class="fas fa-user-circle"></i> a) Personal Information</h3>
+            <ul>
+                <li><strong>Name</strong> (Voter, Booth Level Officer, Returning Officer, ARO)</li>
+                <li><strong>Phone Number</strong> – secured and role-based access</li>
+                <li><strong>Voter ID (EPIC Number)</strong> – unique electoral identifier</li>
+                <li><strong>Gender & Age/Date of Birth</strong> – for demographic accuracy</li>
+            </ul>
+            <h3><i class="fas fa-map-pin"></i> b) Sensitive & Location Information</h3>
+            <ul>
+                <li>Geographic coordinates (Latitude & Longitude) – real-time field coordination</li>
+                <li>Address details: Block, Taluk, District, Pincode – precinct mapping</li>
+            </ul>
+            <h3><i class="fas fa-universal-access"></i> c) Additional Assistance Data</h3>
+            <ul>
+                <li>Disability type (if any) – to ensure accessible voting</li>
+                <li>Voting intention (Will Vote / Won’t Vote) – analytical outreach</li>
+                <li>Assistance requirements & crew/officer details for election duty</li>
+            </ul>
+        </div>
+
+        <div id="howUse" class="policy-section">
+            <h2><i class="fas fa-microchip"></i> 2. How We Use the Information</h2>
+            <ul>
+                <li><i class="fas fa-chalkboard-user"></i>  Provide real-time voter mapping and geospatial visualization</li>
+                <li><i class="fas fa-wheelchair"></i>  Display Differently Abled Persons (DAP) on interactive maps for assistance</li>
+                <li><i class="fas fa-flag-checkered"></i>  Enable officers to assess voter needs and optimize booth support</li>
+                <li><i class="fas fa-tasks"></i>  Allow BLOs to manage/resolve voter queries through dashboard</li>
+                <li><i class="fas fa-chart-simple"></i>  Deliver election management dashboards for RO/ARO & Super Admin</li>
+                <li><i class="fas fa-bell"></i>  Send targeted push notifications (Firebase) for critical updates</li>
+                <li><i class="fas fa-chart-line"></i>  Improve operational efficiency and resource allocation</li>
+            </ul>
+        </div>
+
+        <div id="locationUsage" class="policy-section">
+            <h2><i class="fas fa-location-dot"></i> 3. Location & Geofencing</h2>
+            <p>VoteAble collects <strong>real-time location</strong> of authorized admin users (BLO, RO, crew) exclusively during active election duties. This enables:</p>
+            <ul>
+                <li>📍 Showing nearby voters requiring mobility or DAP assistance</li>
+                <li>🗺️ Optimizing field routes and immediate response</li>
+                <li>🔒 Location data is encrypted, never shared with external entities, and visible only to supervisory roles.</li>
+            </ul>
+            <p><i class="fas fa-info-circle"></i> Officers may disable location services at any time, but certain features may be limited.</p>
+        </div>
+
+        <div id="thirdParty" class="policy-section">
+            <h2><i class="fas fa-share-nodes"></i> 4. Trusted Third-Party Services</h2>
+            <div><span class="badge-tech"><i class="fab fa-google"></i> Google Maps API</span> – secure rendering of electoral maps, location intelligence</div>
+            <div><span class="badge-tech"><i class="fas fa-cloud-upload-alt"></i> Firebase Cloud Messaging</span> – instant push notifications for election alerts</div>
+            <p style="margin-top: 12px;">All third-party integrations adhere to strict data minimization and confidentiality agreements. No voter/officer data is sold or transferred for marketing.</p>
+        </div>
+
+        <div id="storage" class="policy-section">
+            <h2><i class="fas fa-database"></i> 5. Secure Infrastructure</h2>
+            <ul>
+                <li><strong>Database:</strong> PostgreSQL with role-based access controls (RBAC)</li>
+                <li><strong>Hosting:</strong> Railway (SOC2-compliant environment)</li>
+                <li><strong>Encryption:</strong> TLS 1.3 in transit, AES-256 at rest for sensitive fields</li>
+                <li>Continuous vulnerability monitoring and strict authentication (JWT + MFA for admin roles)</li>
+                <li>Regular security audits and penetration testing</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><i class="fas fa-handshake"></i> 6. Data Sharing & Confidentiality</h2>
+            <p>We <strong>do not sell, rent, or trade</strong> any personal or electoral data. Information is accessible only to designated election officers (BLO, RO, ARO, Super Admin) for official purposes. Data sharing with government election bodies is compliant with local electoral laws and only upon lawful request.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2><i class="fas fa-child"></i> 7. Children's Privacy</h2>
+            <p>VoteAble is strictly intended for election management and voters above 18 years of age. The application does not knowingly collect information from individuals under 13. If such data is discovered, it is immediately removed from active systems.</p>
+        </div>
+
+        <div id="userRights" class="policy-section">
+            <h2><i class="fas fa-gavel"></i> 8. Your Data Rights</h2>
+            <ul>
+                <li><i class="fas fa-pen"></i> <strong>Right to Access:</strong> Authorized officers can view data via secure dashboards.</li>
+                <li><i class="fas fa-sync-alt"></i> <strong>Right to Rectification:</strong> Update voter profiles, contact details through BLO portal.</li>
+                <li><i class="fas fa-trash-alt"></i> <strong>Right to Erasure:</strong> Subject to electoral retention laws, you may request data removal.</li>
+                <li>For any data request, reach out to our Data Protection Officer at the contact below.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section">
+            <h2><i class="fas fa-clock"></i> 9. Policy Updates</h2>
+            <p>This privacy policy may be revised to reflect technological changes, legal updates, or new features. The “Effective Date” at the top will be revised accordingly. Users will be notified through in-app announcements or email for material changes.</p>
+        </div>
+
+        <div id="contact" class="policy-section">
+            <h2><i class="fas fa-headset"></i> 10. Contact & Governance</h2>
+            <p>If you have questions about this Privacy Policy, data practices, or wish to exercise your rights, please contact our election-tech compliance team:</p>
+            <div class="contact-email" style="margin: 1rem 0;">
+                <i class="fas fa-envelope"></i>  strenovix@gmail.com
+            </div>
+            <div class="consent-box">
+                <i class="fas fa-check-circle" style="color:#f4c542; margin-right: 8px;"></i>
+                <strong>Consent acknowledgment</strong><br>
+                By using VoteAble, you acknowledge that you have read and understood this Privacy Policy. Officers and voters agree to the collection, processing, and storage of information as described, essential for democratic process facilitation.
+            </div>
+        </div>
+
+        <div class="footer-note">
+            <span><i class="far fa-registered"></i> VoteAble – Election Integrity First</span>
+            <span><i class="fas fa-laptop-code"></i> Version 2.1 | Secure by Design</span>
+        </div>
+    </div>
+</div>
+
+<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+    (function() {
+        const navButtons = document.querySelectorAll('.nav-btn');
+        
+        function scrollToSection(sectionId) {
+            const targetElement = document.getElementById(sectionId);
+            if (targetElement) {
+                const offset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: elementPosition - offset,
+                    behavior: 'smooth'
+                });
+                targetElement.style.transition = 'all 0.2s';
+                targetElement.style.boxShadow = '0 0 0 3px rgba(244,197,66,0.4)';
+                setTimeout(() => {
+                    targetElement.style.boxShadow = '';
+                }, 800);
+            }
+        }
+
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const sectionId = btn.getAttribute('data-section');
+                if (sectionId) {
+                    scrollToSection(sectionId);
+                }
+            });
+        });
+
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        
+        function toggleScrollBtn() {
+            if (window.scrollY > 400) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        }
+        
+        window.addEventListener('scroll', toggleScrollBtn);
+        toggleScrollBtn();
+        
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        const emailBox = document.querySelector('.contact-email');
+        if (emailBox) {
+            emailBox.style.cursor = 'pointer';
+            emailBox.addEventListener('click', () => {
+                const emailText = "strenovix@gmail.com";
+                navigator.clipboard.writeText(emailText).then(() => {
+                    const originalText = emailBox.innerHTML;
+                    emailBox.innerHTML = `<i class="fas fa-check-circle"></i>  Copied!`;
+                    setTimeout(() => {
+                        emailBox.innerHTML = originalText;
+                    }, 1800);
+                }).catch(() => {
+                    alert("Email: strenovix@gmail.com");
+                });
+            });
+            emailBox.setAttribute('title', 'Click to copy email address');
+        }
+        
+        const sections = document.querySelectorAll('.policy-section');
+        function highlightActiveNav() {
+            let current = '';
+            const scrollPos = window.scrollY + 100;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navButtons.forEach(btn => {
+                const btnSection = btn.getAttribute('data-section');
+                if (btnSection && btnSection === current) {
+                    btn.style.background = '#e0ebf3';
+                    btn.style.fontWeight = '600';
+                    btn.style.color = '#0f2b3d';
+                } else {
+                    btn.style.background = 'transparent';
+                    btn.style.fontWeight = '500';
+                    btn.style.color = '#2c5a7a';
+                }
+            });
+        }
+        window.addEventListener('scroll', highlightActiveNav);
+        highlightActiveNav();
+        
+        setTimeout(highlightActiveNav, 100);
+        
+        const allCollapsible = document.querySelectorAll('.policy-section h2');
+        allCollapsible.forEach(head => {
+            head.addEventListener('mouseenter', (e) => {
+                const icon = head.querySelector('i');
+                if (icon) icon.style.transform = 'scale(1.05)';
+            });
+            head.addEventListener('mouseleave', (e) => {
+                const icon = head.querySelector('i');
+                if (icon) icon.style.transform = 'scale(1)';
+            });
+        });
+        
+        const consentDiv = document.querySelector('.consent-box');
+        if (consentDiv) {
+            consentDiv.addEventListener('click', () => {
+                consentDiv.style.backgroundColor = '#fff4e0';
+                setTimeout(() => { consentDiv.style.backgroundColor = '#fef9e6'; }, 300);
+            });
+        }
+    })();
+</script>
+</body>
+</html>
