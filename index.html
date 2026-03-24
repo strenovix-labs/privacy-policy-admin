@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>VoteAble · Privacy Policy | Secure Election Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <title>VoteAble | Privacy Policy — Election-Grade Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -14,522 +14,601 @@
         }
 
         body {
-            background: linear-gradient(145deg, #eef2f7 0%, #f8fafc 100%);
-            font-family: 'Inter', sans-serif;
-            color: #1e293b;
+            background: #0a0c12;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #eef2ff;
             line-height: 1.5;
-            padding: 2rem 1.5rem;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .bg-glow {
+            position: fixed;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.3), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .policy-container {
-            max-width: 1280px;
+        .bg-glow-left {
+            left: -15%;
+            bottom: -10%;
+            top: auto;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%);
+            width: 550px;
+            height: 550px;
+        }
+
+        .policy-wrapper {
+            max-width: 1400px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 2rem;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.02);
-            overflow: hidden;
-            transition: all 0.2s ease;
+            padding: 2rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
         }
 
-        .policy-header {
-            background: linear-gradient(135deg, #0f2b3d 0%, #1b4a6e 100%);
-            padding: 2.5rem 2rem 2rem 2rem;
-            color: white;
-            border-bottom: 4px solid #f4c542;
+        /* floating glass card header */
+        .hero-section {
+            background: rgba(18, 22, 35, 0.75);
+            backdrop-filter: blur(20px);
+            border-radius: 2.5rem;
+            border: 1px solid rgba(79, 70, 229, 0.3);
+            padding: 2.5rem 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.5);
+            transition: all 0.3s;
         }
 
-        .badge-date {
-            display: inline-block;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(2px);
-            padding: 0.3rem 1rem;
-            border-radius: 40px;
+        .badge-officer {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(79, 70, 229, 0.2);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
             font-size: 0.8rem;
             font-weight: 500;
-            letter-spacing: 0.3px;
-            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(79, 70, 229, 0.5);
+            color: #a5b4fc;
+            margin-bottom: 1.5rem;
         }
 
-        .policy-header h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
             letter-spacing: -0.02em;
-            margin: 0.5rem 0 0.75rem 0;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .meta-item {
             display: flex;
             align-items: center;
             gap: 12px;
-            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: #cbd5e6;
         }
 
-        .policy-header h1 i {
-            font-size: 2rem;
-            color: #f4c542;
+        .meta-item i {
+            color: #6366f1;
+            font-size: 1.1rem;
         }
 
-        .effective-tag {
-            font-size: 1rem;
-            font-weight: 400;
-            opacity: 0.9;
-            border-left: 3px solid #f4c542;
-            padding-left: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .quick-nav {
+        /* navigation grid */
+        .nav-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: #f9fafc;
-            border-bottom: 1px solid #e4e9f0;
+            gap: 0.8rem;
+            margin-bottom: 2.5rem;
+            background: rgba(15, 18, 30, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 80px;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
 
-        .nav-btn {
+        .pill-nav {
             background: transparent;
             border: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: #2c5a7a;
-            font-family: 'Inter', sans-serif;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .nav-btn i {
-            font-size: 0.8rem;
-        }
-
-        .nav-btn:hover {
-            background: #e6edf4;
-            color: #0f2b3d;
-            transform: translateY(-1px);
-        }
-
-        .policy-content {
-            padding: 2rem 2rem 2.5rem 2rem;
-        }
-
-        .policy-section {
-            background: #ffffff;
-            border-radius: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1.2rem 1.8rem 1.5rem 1.8rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
-            border: 1px solid #edf2f7;
-            transition: all 0.2s;
-        }
-
-        .policy-section:hover {
-            border-color: #cbdde9;
-            box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.08);
-        }
-
-        .policy-section h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            color: #0f2b3d;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-left: 5px solid #f4c542;
-            padding-left: 1rem;
-        }
-
-        .policy-section h2 i {
-            color: #1b4a6e;
-            font-size: 1.5rem;
-        }
-
-        .policy-section h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin: 1rem 0 0.5rem 0;
-            color: #2c3e50;
-        }
-
-        .policy-section p, .policy-section li {
-            color: #2d3e50;
-            font-weight: 400;
-        }
-
-        ul {
-            padding-left: 1.6rem;
-            margin: 0.8rem 0;
-        }
-
-        li {
-            margin: 0.5rem 0;
-            line-height: 1.5;
-        }
-
-        .badge-tech {
-            background: #eef2ff;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: #1e3a5f;
-        }
-
-        .consent-box {
-            background: #fef9e6;
-            border-left: 4px solid #f4c542;
-            padding: 1.2rem 1.5rem;
-            border-radius: 1rem;
-            margin-top: 1rem;
-        }
-
-        .footer-note {
-            margin-top: 2rem;
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
-            font-size: 0.85rem;
-            color: #5b6e8c;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .contact-email {
-            background: #f1f5f9;
-            padding: 0.5rem 1rem;
-            border-radius: 40px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: monospace;
-        }
-
-        button:active {
-            transform: scale(0.97);
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #1b4a6e;
-            color: white;
-            width: 48px;
-            height: 48px;
+            padding: 0.6rem 1.4rem;
             border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            font-family: inherit;
+            color: #b9c3db;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pill-nav i {
+            font-size: 0.9rem;
+        }
+
+        .pill-nav:hover {
+            background: rgba(99, 102, 241, 0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .pill-nav.active-nav {
+            background: #6366f1;
+            color: white;
+            box-shadow: 0 6px 14px rgba(99, 102, 241, 0.3);
+        }
+
+        /* card grid layout */
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .privacy-card {
+            background: rgba(22, 26, 40, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            padding: 1.6rem 1.8rem;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            height: 100%;
+        }
+
+        .privacy-card:hover {
+            border-color: rgba(99, 102, 241, 0.6);
+            transform: translateY(-5px);
+            background: rgba(28, 32, 52, 0.85);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.4);
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 1.3rem;
+        }
+
+        .card-icon i {
+            font-size: 1.7rem;
+            color: white;
+        }
+
+        .privacy-card h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.3px;
+            background: linear-gradient(to right, #fff, #cbd5ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .privacy-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+            color: #cbd5ff;
+        }
+
+        .privacy-card p, .privacy-card li {
+            color: #b1c2e0;
+            font-size: 0.92rem;
+        }
+
+        .privacy-card ul {
+            padding-left: 1.3rem;
+            margin: 0.5rem 0;
+        }
+
+        .privacy-card li {
+            margin: 0.4rem 0;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .badge-tech-new {
+            background: rgba(99, 102, 241, 0.2);
+            padding: 0.25rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #a5b4fc;
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+
+        .full-width-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+
+        .consent-modern {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border-left: 5px solid #6366f1;
+            margin-top: 1rem;
+        }
+
+        .footer-elegant {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;
+            background: rgba(12, 14, 26, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
+            border: 1px solid rgba(99,102,241,0.2);
+        }
+
+        .copy-email {
+            background: #1e1f2e;
+            padding: 0.6rem 1.2rem;
+            border-radius: 60px;
+            font-family: monospace;
             cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-            border: none;
-            z-index: 100;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
+        .copy-email:hover {
+            background: #2d2f44;
+            transform: scale(1.02);
         }
 
-        .scroll-top:hover {
-            background: #0f2b3d;
-            transform: translateY(-3px);
+        .scroll-indicator {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: #1e1f2e;
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(12px);
+            z-index: 99;
+            border: 1px solid #6366f1;
+            pointer-events: none;
         }
 
-        @media (max-width: 700px) {
-            body {
-                padding: 1rem;
+        @media (max-width: 780px) {
+            .policy-grid {
+                grid-template-columns: 1fr;
             }
-            .policy-content {
-                padding: 1.2rem;
+            .hero-section h1 {
+                font-size: 2.2rem;
             }
-            .policy-section {
-                padding: 1rem;
+            .hero-section {
+                padding: 1.8rem;
             }
-            .policy-header h1 {
-                font-size: 1.8rem;
-            }
-            .quick-nav {
+            .nav-grid {
+                border-radius: 2rem;
                 overflow-x: auto;
-                flex-wrap: nowrap;
-                padding: 0.8rem 1rem;
             }
-        }
-
-        .nav-btn:focus-visible {
-            outline: 2px solid #f4c542;
-            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
+<div class="bg-glow"></div>
+<div class="bg-glow bg-glow-left"></div>
 
-<div class="policy-container">
-    <div class="policy-header">
-        <div class="badge-date">
-            <i class="fas fa-shield-alt"></i>  Officer-grade data protection
+<div class="policy-wrapper">
+    <div class="hero-section">
+        <div class="badge-officer">
+            <i class="fas fa-shield-hooded"></i> Authorized Election Personnel · BLO · RO · ARO · Super Admin
         </div>
-        <h1>
-            <i class="fas fa-vote-yea"></i> 
-            VoteAble · Privacy & Data Ethics
-        </h1>
-        <div class="effective-tag">
-            <i class="far fa-calendar-alt"></i>  Effective date: 24th March 2026  |  <i class="fas fa-user-check"></i>  For BLO, RO, ARO, Super Admin
+        <h1><i class="fas fa-gavel" style="background: none; -webkit-background-clip: unset; color: #6366f1; margin-right: 12px;"></i> VoteAble<br>Privacy & Data Stewardship</h1>
+        <div class="hero-meta">
+            <div class="meta-item"><i class="fas fa-calendar-check"></i> Effective: March 24, 2026</div>
+            <div class="meta-item"><i class="fas fa-laptop-code"></i> Zero-trust architecture</div>
+            <div class="meta-item"><i class="fas fa-map-marker-alt"></i> Real-time geofencing</div>
         </div>
     </div>
 
-    <div class="quick-nav" id="quickNav">
-        <button class="nav-btn" data-section="infoCollect"><i class="fas fa-database"></i> Information</button>
-        <button class="nav-btn" data-section="howUse"><i class="fas fa-chart-line"></i> Usage</button>
-        <button class="nav-btn" data-section="locationUsage"><i class="fas fa-map-marker-alt"></i> Location</button>
-        <button class="nav-btn" data-section="thirdParty"><i class="fas fa-plug"></i> Third-Party</button>
-        <button class="nav-btn" data-section="storage"><i class="fas fa-lock"></i> Security</button>
-        <button class="nav-btn" data-section="userRights"><i class="fas fa-user-lock"></i> Your Rights</button>
-        <button class="nav-btn" data-section="contact"><i class="fas fa-envelope"></i> Contact</button>
+    <div class="nav-grid" id="navGrid">
+        <button class="pill-nav" data-section="collect"><i class="fas fa-database"></i> Data collection</button>
+        <button class="pill-nav" data-section="usage"><i class="fas fa-chart-line"></i> Usage logic</button>
+        <button class="pill-nav" data-section="location"><i class="fas fa-location-dot"></i> Geodata</button>
+        <button class="pill-nav" data-section="third"><i class="fas fa-plug"></i> Integrations</button>
+        <button class="pill-nav" data-section="secure"><i class="fas fa-shield-hooded"></i> Security</button>
+        <button class="pill-nav" data-section="rights"><i class="fas fa-scale-balanced"></i> Your rights</button>
+        <button class="pill-nav" data-section="contact-foot"><i class="fas fa-envelope"></i> Contact</button>
     </div>
 
-    <div class="policy-content">
-        <div id="infoCollect" class="policy-section">
-            <h2><i class="fas fa-clipboard-list"></i> 1. Information We Collect</h2>
-            <h3><i class="fas fa-user-circle"></i> a) Personal Information</h3>
+    <div class="policy-grid">
+        <div id="collect" class="privacy-card">
+            <div class="card-icon"><i class="fas fa-clipboard-user"></i></div>
+            <h2>1. Information we collect</h2>
+            <h3><i class="fas fa-user-tag"></i> Personal & electoral</h3>
             <ul>
-                <li><strong>Name</strong> (Voter, Booth Level Officer, Returning Officer, ARO)</li>
-                <li><strong>Phone Number</strong> – secured and role-based access</li>
-                <li><strong>Voter ID (EPIC Number)</strong> – unique electoral identifier</li>
-                <li><strong>Gender & Age/Date of Birth</strong> – for demographic accuracy</li>
+                <li><strong>Name, Phone, EPIC number</strong> – verified voter identity</li>
+                <li>Gender, Age/DOB – demographic insights</li>
+                <li>Disability type & assistance flags</li>
             </ul>
-            <h3><i class="fas fa-map-pin"></i> b) Sensitive & Location Information</h3>
+            <h3><i class="fas fa-map-pin"></i> Sensitive location</h3>
             <ul>
-                <li>Geographic coordinates (Latitude & Longitude) – real-time field coordination</li>
-                <li>Address details: Block, Taluk, District, Pincode – precinct mapping</li>
+                <li>Latitude/Longitude (officer duty mode)</li>
+                <li>Block, Taluk, District, Pincode</li>
             </ul>
-            <h3><i class="fas fa-universal-access"></i> c) Additional Assistance Data</h3>
+            <h3><i class="fas fa-chart-simple"></i> Operational data</h3>
             <ul>
-                <li>Disability type (if any) – to ensure accessible voting</li>
-                <li>Voting intention (Will Vote / Won’t Vote) – analytical outreach</li>
-                <li>Assistance requirements & crew/officer details for election duty</li>
-            </ul>
-        </div>
-
-        <div id="howUse" class="policy-section">
-            <h2><i class="fas fa-microchip"></i> 2. How We Use the Information</h2>
-            <ul>
-                <li><i class="fas fa-chalkboard-user"></i>  Provide real-time voter mapping and geospatial visualization</li>
-                <li><i class="fas fa-wheelchair"></i>  Display Differently Abled Persons (DAP) on interactive maps for assistance</li>
-                <li><i class="fas fa-flag-checkered"></i>  Enable officers to assess voter needs and optimize booth support</li>
-                <li><i class="fas fa-tasks"></i>  Allow BLOs to manage/resolve voter queries through dashboard</li>
-                <li><i class="fas fa-chart-simple"></i>  Deliver election management dashboards for RO/ARO & Super Admin</li>
-                <li><i class="fas fa-bell"></i>  Send targeted push notifications (Firebase) for critical updates</li>
-                <li><i class="fas fa-chart-line"></i>  Improve operational efficiency and resource allocation</li>
+                <li>Voting intention & crew allocation</li>
+                <li>DAP mapping & booth readiness</li>
             </ul>
         </div>
 
-        <div id="locationUsage" class="policy-section">
-            <h2><i class="fas fa-location-dot"></i> 3. Location & Geofencing</h2>
-            <p>VoteAble collects <strong>real-time location</strong> of authorized admin users (BLO, RO, crew) exclusively during active election duties. This enables:</p>
+        <div id="usage" class="privacy-card">
+            <div class="card-icon"><i class="fas fa-microchip"></i></div>
+            <h2>2. How we utilize data</h2>
             <ul>
-                <li>📍 Showing nearby voters requiring mobility or DAP assistance</li>
-                <li>🗺️ Optimizing field routes and immediate response</li>
-                <li>🔒 Location data is encrypted, never shared with external entities, and visible only to supervisory roles.</li>
-            </ul>
-            <p><i class="fas fa-info-circle"></i> Officers may disable location services at any time, but certain features may be limited.</p>
-        </div>
-
-        <div id="thirdParty" class="policy-section">
-            <h2><i class="fas fa-share-nodes"></i> 4. Trusted Third-Party Services</h2>
-            <div><span class="badge-tech"><i class="fab fa-google"></i> Google Maps API</span> – secure rendering of electoral maps, location intelligence</div>
-            <div><span class="badge-tech"><i class="fas fa-cloud-upload-alt"></i> Firebase Cloud Messaging</span> – instant push notifications for election alerts</div>
-            <p style="margin-top: 12px;">All third-party integrations adhere to strict data minimization and confidentiality agreements. No voter/officer data is sold or transferred for marketing.</p>
-        </div>
-
-        <div id="storage" class="policy-section">
-            <h2><i class="fas fa-database"></i> 5. Secure Infrastructure</h2>
-            <ul>
-                <li><strong>Database:</strong> PostgreSQL with role-based access controls (RBAC)</li>
-                <li><strong>Hosting:</strong> Railway (SOC2-compliant environment)</li>
-                <li><strong>Encryption:</strong> TLS 1.3 in transit, AES-256 at rest for sensitive fields</li>
-                <li>Continuous vulnerability monitoring and strict authentication (JWT + MFA for admin roles)</li>
-                <li>Regular security audits and penetration testing</li>
+                <li><i class="fas fa-chalkboard-user"></i> Dynamic voter mapping & heat layers</li>
+                <li><i class="fas fa-wheelchair"></i> Highlight DAP citizens for priority assistance</li>
+                <li><i class="fas fa-flag-checkered"></i> Officer dashboards & query resolution</li>
+                <li><i class="fas fa-chart-simple"></i> Election command center (RO/ARO)</li>
+                <li><i class="fas fa-bell"></i> Firebase notifications for critical alerts</li>
+                <li>Operational efficiency & resource planning</li>
             </ul>
         </div>
 
-        <div class="policy-section">
-            <h2><i class="fas fa-handshake"></i> 6. Data Sharing & Confidentiality</h2>
-            <p>We <strong>do not sell, rent, or trade</strong> any personal or electoral data. Information is accessible only to designated election officers (BLO, RO, ARO, Super Admin) for official purposes. Data sharing with government election bodies is compliant with local electoral laws and only upon lawful request.</p>
-        </div>
-
-        <div class="policy-section">
-            <h2><i class="fas fa-child"></i> 7. Children's Privacy</h2>
-            <p>VoteAble is strictly intended for election management and voters above 18 years of age. The application does not knowingly collect information from individuals under 13. If such data is discovered, it is immediately removed from active systems.</p>
-        </div>
-
-        <div id="userRights" class="policy-section">
-            <h2><i class="fas fa-gavel"></i> 8. Your Data Rights</h2>
+        <div id="location" class="privacy-card">
+            <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
+            <h2>3. Geofencing & live location</h2>
+            <p>Authorized officers share real-time location <strong>only during active election shifts</strong> to:</p>
             <ul>
-                <li><i class="fas fa-pen"></i> <strong>Right to Access:</strong> Authorized officers can view data via secure dashboards.</li>
-                <li><i class="fas fa-sync-alt"></i> <strong>Right to Rectification:</strong> Update voter profiles, contact details through BLO portal.</li>
-                <li><i class="fas fa-trash-alt"></i> <strong>Right to Erasure:</strong> Subject to electoral retention laws, you may request data removal.</li>
-                <li>For any data request, reach out to our Data Protection Officer at the contact below.</li>
+                <li>📍 Display nearby voters requiring mobility aid</li>
+                <li>🗺️ Optimize field routes for BLOs & response teams</li>
+                <li>🔒 Data encrypted, restricted to supervisory roles</li>
             </ul>
+            <p class="meta-item" style="margin-top: 10px;"><i class="fas fa-toggle-off"></i> Location can be disabled anytime — some features may be limited.</p>
         </div>
 
-        <div class="policy-section">
-            <h2><i class="fas fa-clock"></i> 9. Policy Updates</h2>
-            <p>This privacy policy may be revised to reflect technological changes, legal updates, or new features. The “Effective Date” at the top will be revised accordingly. Users will be notified through in-app announcements or email for material changes.</p>
-        </div>
-
-        <div id="contact" class="policy-section">
-            <h2><i class="fas fa-headset"></i> 10. Contact & Governance</h2>
-            <p>If you have questions about this Privacy Policy, data practices, or wish to exercise your rights, please contact our election-tech compliance team:</p>
-            <div class="contact-email" style="margin: 1rem 0;">
-                <i class="fas fa-envelope"></i>  strenovix@gmail.com
+        <div id="third" class="privacy-card">
+            <div class="card-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+            <h2>4. Trusted third‑parties</h2>
+            <div class="badge-list">
+                <span class="badge-tech-new"><i class="fab fa-google"></i> Google Maps Platform</span>
+                <span class="badge-tech-new"><i class="fas fa-fire"></i> Firebase Cloud Messaging</span>
             </div>
-            <div class="consent-box">
-                <i class="fas fa-check-circle" style="color:#f4c542; margin-right: 8px;"></i>
-                <strong>Consent acknowledgment</strong><br>
-                By using VoteAble, you acknowledge that you have read and understood this Privacy Policy. Officers and voters agree to the collection, processing, and storage of information as described, essential for democratic process facilitation.
-            </div>
+            <p style="margin-top: 12px;">Strict data minimization agreements — no voter information is sold or shared for marketing. All integrations comply with electoral data protection standards.</p>
         </div>
 
-        <div class="footer-note">
-            <span><i class="far fa-registered"></i> VoteAble – Election Integrity First</span>
-            <span><i class="fas fa-laptop-code"></i> Version 2.1 | Secure by Design</span>
+        <div id="secure" class="privacy-card">
+            <div class="card-icon"><i class="fas fa-lock"></i></div>
+            <h2>5. Infrastructure & encryption</h2>
+            <ul>
+                <li><strong>Database:</strong> PostgreSQL + RBAC (role-based)</li>
+                <li><strong>Hosting:</strong> Railway (SOC2 Type II)</li>
+                <li><strong>Encryption:</strong> TLS 1.3 / AES-256 at rest</li>
+                <li>JWT + MFA for admin roles, continuous audits</li>
+            </ul>
         </div>
+
+        <div class="privacy-card">
+            <div class="card-icon"><i class="fas fa-handshake"></i></div>
+            <h2>6. No data commercialization</h2>
+            <p>VoteAble <strong>never sells, rents, or trades</strong> any personal or electoral data. Access is restricted to verified election officers (BLO, RO, ARO, Super Admin). Government data sharing only occurs under legal mandates with strict confidentiality.</p>
+        </div>
+
+        <div class="privacy-card">
+            <div class="card-icon"><i class="fas fa-child-reaching"></i></div>
+            <h2>7. Children's privacy</h2>
+            <p>Strictly for users 18+ (voters and officers). No data is knowingly collected from individuals under 13. Any incidental data is purged immediately.</p>
+        </div>
+
+        <div id="rights" class="privacy-card">
+            <div class="card-icon"><i class="fas fa-gavel"></i></div>
+            <h2>8. Your data rights</h2>
+            <ul>
+                <li><i class="fas fa-eye"></i> <strong>Access:</strong> Secure dashboards for officers</li>
+                <li><i class="fas fa-pen"></i> <strong>Rectification:</strong> Update voter details via BLO portal</li>
+                <li><i class="fas fa-trash-can"></i> <strong>Erasure:</strong> Request removal (subject to election law)</li>
+                <li>Contact Data Protection Officer for any request</li>
+            </ul>
+        </div>
+
+        <div class="privacy-card">
+            <div class="card-icon"><i class="fas fa-clock"></i></div>
+            <h2>9. Policy evolution</h2>
+            <p>This policy may be updated to reflect legal, technological or operational improvements. Material changes will be communicated via in-app notice and email to registered officers.</p>
+        </div>
+
+        <div id="contact-foot" class="privacy-card full-width-card">
+            <div class="card-icon"><i class="fas fa-headset"></i></div>
+            <h2>10. Compliance & contact hub</h2>
+            <p>For privacy inquiries, data subject requests, or officer support, reach our election-tech governance team:</p>
+            <div class="copy-email" id="copyEmailBtn">
+                <i class="fas fa-envelope"></i> strenovix@gmail.com
+                <i class="fas fa-copy" style="font-size: 12px; opacity: 0.7;"></i>
+            </div>
+            <div class="consent-modern">
+                <i class="fas fa-check-circle" style="color:#6366f1; margin-right: 12px; font-size: 1.2rem;"></i>
+                <strong>Explicit consent acknowledgment</strong><br>
+                By accessing or using VoteAble, all officers and verified users acknowledge that they have read, understood, and agree to the data practices described in this Privacy Policy. This consent is fundamental to election facilitation and secure democratic infrastructure.
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-elegant">
+        <div><i class="fas fa-vote-yea"></i> VoteAble — Integrity | Accessibility | Innovation</div>
+        <div><i class="fas fa-shield-alt"></i> Version 3.0 · Certified election-grade stack</div>
     </div>
 </div>
 
-<button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+<div class="scroll-indicator" id="scrollIndicator">
+    <i class="fas fa-arrow-up"></i> <span id="scrollPercent">0</span>%
+</div>
 
 <script>
     (function() {
-        const navButtons = document.querySelectorAll('.nav-btn');
+        const navPills = document.querySelectorAll('.pill-nav');
+        const sectionsMap = {
+            'collect': 'collect',
+            'usage': 'usage',
+            'location': 'location',
+            'third': 'third',
+            'secure': 'secure',
+            'rights': 'rights',
+            'contact-foot': 'contact-foot'
+        };
         
-        function scrollToSection(sectionId) {
-            const targetElement = document.getElementById(sectionId);
-            if (targetElement) {
-                const offset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        function smoothScrollToElement(elementId) {
+            const target = document.getElementById(elementId);
+            if (target) {
+                const offset = 100;
+                const elementPos = target.getBoundingClientRect().top + window.pageYOffset;
                 window.scrollTo({
-                    top: elementPosition - offset,
+                    top: elementPos - offset,
                     behavior: 'smooth'
                 });
-                targetElement.style.transition = 'all 0.2s';
-                targetElement.style.boxShadow = '0 0 0 3px rgba(244,197,66,0.4)';
+                target.style.transition = 'all 0.2s';
+                target.style.boxShadow = '0 0 0 3px #6366f1, inset 0 0 0 1px rgba(99,102,241,0.3)';
                 setTimeout(() => {
-                    targetElement.style.boxShadow = '';
+                    if (target) target.style.boxShadow = '';
                 }, 800);
             }
         }
-
-        navButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const sectionId = btn.getAttribute('data-section');
-                if (sectionId) {
-                    scrollToSection(sectionId);
+        
+        navPills.forEach(pill => {
+            pill.addEventListener('click', (e) => {
+                const sectionKey = pill.getAttribute('data-section');
+                if (sectionKey && sectionsMap[sectionKey]) {
+                    smoothScrollToElement(sectionKey);
+                } else if (sectionKey === 'contact-foot') {
+                    smoothScrollToElement('contact-foot');
+                }
+                navPills.forEach(p => p.classList.remove('active-nav'));
+                pill.classList.add('active-nav');
+                setTimeout(() => {
+                    const activeId = pill.getAttribute('data-section');
+                    if (activeId && document.getElementById(activeId)) {
+                        const activeSection = document.getElementById(activeId);
+                        if (activeSection) activeSection.style.scrollMarginTop = '80px';
+                    }
+                }, 50);
+            });
+        });
+        
+        const sectionsForHighlight = ['collect', 'usage', 'location', 'third', 'secure', 'rights', 'contact-foot'];
+        function highlightActivePill() {
+            let currentSection = '';
+            const scrollPos = window.scrollY + 130;
+            for (let id of sectionsForHighlight) {
+                const el = document.getElementById(id);
+                if (el) {
+                    const offsetTop = el.offsetTop;
+                    const offsetBottom = offsetTop + el.offsetHeight;
+                    if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+                        currentSection = id;
+                        break;
+                    }
+                }
+            }
+            navPills.forEach(pill => {
+                const pillSection = pill.getAttribute('data-section');
+                if (pillSection === currentSection) {
+                    pill.classList.add('active-nav');
+                } else {
+                    pill.classList.remove('active-nav');
                 }
             });
-        });
-
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        
-        function toggleScrollBtn() {
-            if (window.scrollY > 400) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
         }
         
-        window.addEventListener('scroll', toggleScrollBtn);
-        toggleScrollBtn();
+        window.addEventListener('scroll', highlightActivePill);
+        highlightActivePill();
         
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        const emailBox = document.querySelector('.contact-email');
-        if (emailBox) {
-            emailBox.style.cursor = 'pointer';
-            emailBox.addEventListener('click', () => {
-                const emailText = "strenovix@gmail.com";
-                navigator.clipboard.writeText(emailText).then(() => {
-                    const originalText = emailBox.innerHTML;
-                    emailBox.innerHTML = `<i class="fas fa-check-circle"></i>  Copied!`;
+        const copyBtn = document.getElementById('copyEmailBtn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const email = 'strenovix@gmail.com';
+                navigator.clipboard.writeText(email).then(() => {
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = `<i class="fas fa-check-circle"></i> Copied! <i class="fas fa-check" style="font-size:12px;"></i>`;
                     setTimeout(() => {
-                        emailBox.innerHTML = originalText;
-                    }, 1800);
+                        copyBtn.innerHTML = originalHTML;
+                    }, 2000);
                 }).catch(() => {
-                    alert("Email: strenovix@gmail.com");
+                    alert('Email: strenovix@gmail.com');
                 });
             });
-            emailBox.setAttribute('title', 'Click to copy email address');
         }
         
-        const sections = document.querySelectorAll('.policy-section');
-        function highlightActiveNav() {
-            let current = '';
-            const scrollPos = window.scrollY + 100;
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navButtons.forEach(btn => {
-                const btnSection = btn.getAttribute('data-section');
-                if (btnSection && btnSection === current) {
-                    btn.style.background = '#e0ebf3';
-                    btn.style.fontWeight = '600';
-                    btn.style.color = '#0f2b3d';
-                } else {
-                    btn.style.background = 'transparent';
-                    btn.style.fontWeight = '500';
-                    btn.style.color = '#2c5a7a';
-                }
+        const scrollPercentSpan = document.getElementById('scrollPercent');
+        function updateScrollPercent() {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (winScroll / height) * 100;
+            if (scrollPercentSpan) {
+                scrollPercentSpan.innerText = Math.floor(scrolled);
+            }
+        }
+        window.addEventListener('scroll', updateScrollPercent);
+        updateScrollPercent();
+        
+        const scrollTopIndicator = document.getElementById('scrollIndicator');
+        if (scrollTopIndicator) {
+            scrollTopIndicator.style.cursor = 'pointer';
+            scrollTopIndicator.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
-        window.addEventListener('scroll', highlightActiveNav);
-        highlightActiveNav();
         
-        setTimeout(highlightActiveNav, 100);
-        
-        const allCollapsible = document.querySelectorAll('.policy-section h2');
-        allCollapsible.forEach(head => {
-            head.addEventListener('mouseenter', (e) => {
-                const icon = head.querySelector('i');
-                if (icon) icon.style.transform = 'scale(1.05)';
+        const allCards = document.querySelectorAll('.privacy-card');
+        allCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const iconDiv = card.querySelector('.card-icon i');
+                if (iconDiv) iconDiv.style.transform = 'scale(1.08)';
             });
-            head.addEventListener('mouseleave', (e) => {
-                const icon = head.querySelector('i');
-                if (icon) icon.style.transform = 'scale(1)';
+            card.addEventListener('mouseleave', () => {
+                const iconDiv = card.querySelector('.card-icon i');
+                if (iconDiv) iconDiv.style.transform = 'scale(1)';
             });
         });
         
-        const consentDiv = document.querySelector('.consent-box');
-        if (consentDiv) {
-            consentDiv.addEventListener('click', () => {
-                consentDiv.style.backgroundColor = '#fff4e0';
-                setTimeout(() => { consentDiv.style.backgroundColor = '#fef9e6'; }, 300);
+        const consentBlock = document.querySelector('.consent-modern');
+        if (consentBlock) {
+            consentBlock.addEventListener('click', () => {
+                consentBlock.style.background = 'rgba(99, 102, 241, 0.2)';
+                setTimeout(() => {
+                    consentBlock.style.background = 'rgba(99, 102, 241, 0.1)';
+                }, 300);
             });
         }
+        
+        console.log('VoteAble | Privacy dashboard ready — transparent governance');
     })();
 </script>
 </body>
