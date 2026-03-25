@@ -1091,7 +1091,7 @@ body::before {
 
 <button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function () {
   /* ── Nav highlight ── */
   const navBtns = document.querySelectorAll('.nav-btn');
@@ -1102,7 +1102,10 @@ body::before {
       const id = btn.dataset.section;
       const el = document.getElementById(id);
       if (!el) return;
-      window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+      window.scrollTo({
+        top: el.getBoundingClientRect().top + window.pageYOffset - 80,
+        behavior: 'smooth'
+      });
       navBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     });
@@ -1118,6 +1121,7 @@ body::before {
       b.classList.toggle('active', b.dataset.section === active);
     });
   }
+
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
@@ -1126,7 +1130,10 @@ body::before {
   window.addEventListener('scroll', () => {
     topBtn.classList.toggle('show', window.scrollY > 400);
   }, { passive: true });
-  topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  topBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   /* ── Copy email ── */
   function copyEmail(btn, label) {
@@ -1134,34 +1141,40 @@ body::before {
       const orig = btn.innerHTML;
       btn.innerHTML = '<i class="fas fa-check"></i> ' + (label || 'Copied!');
       setTimeout(() => { btn.innerHTML = orig; }, 2000);
-    }).catch(() => alert('Email: strenovix@gmail.com'));
+    }).catch(() => {
+      alert('Email: strenovix@gmail.com');
+    });
   }
 
   const copyBtn = document.getElementById('copyBtn');
   const contactEmail = document.getElementById('contactEmail');
   const devEmail = document.getElementById('devEmail');
 
-  if (copyBtn) copyBtn.addEventListener('click', () => copyEmail(copyBtn, 'Copied!'));
-  if (contactEmail) contactEmail.addEventListener('click', () => {
-    const orig = contactEmail.textContent;
-    contactEmail.textContent = 'Copied!';
-    navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
-    setTimeout(() => { 
-      contactEmail.innerHTML = '<a href="mailto:strenovix@gmail.com" style="color:var(--blue-accent); font-weight:600; text-decoration:none;">strenovix@gmail.com</a>';
-    }, 2000);
-  });
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => copyEmail(copyBtn, 'Copied!'));
+  }
 
-  if (devEmail) devEmail.addEventListener('click', () => {
-    const original = devEmail.innerHTML;
-    devEmail.textContent = 'Copied!';
-    navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
-    setTimeout(() => {
-      devEmail.innerHTML = '<a href="mailto:strenovix@gmail.com" style="color:var(--blue-accent); font-weight:600; text-decoration:none;">strenovix@gmail.com</a>';
-    }, 2000);
-  });
+  if (contactEmail) {
+    contactEmail.addEventListener('click', () => {
+      contactEmail.textContent = 'Copied!';
+      navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
+      setTimeout(() => {
+        contactEmail.innerHTML = '<a href="mailto:strenovix@gmail.com" style="color:var(--blue-accent); font-weight:600; text-decoration:none;">strenovix@gmail.com</a>';
+      }, 2000);
+    });
+  }
+
+  if (devEmail) {
+    devEmail.addEventListener('click', () => {
+      devEmail.textContent = 'Copied!';
+      navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
+      setTimeout(() => {
+        devEmail.innerHTML = '<a href="mailto:strenovix@gmail.com" style="color:var(--blue-accent); font-weight:600; text-decoration:none;">strenovix@gmail.com</a>';
+      }, 2000);
+    });
+  }
 
 })();
 </script>
-
 </body>
 </html>
