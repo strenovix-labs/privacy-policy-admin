@@ -1146,4 +1146,22 @@ body::before {
     const orig = contactEmail.textContent;
     contactEmail.textContent = 'Copied!';
     navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
-    setTimeout(() => { contact
+    setTimeout(() => { 
+      contactEmail.innerHTML = '<a href="mailto:strenovix@gmail.com" style="color:var(--blue-accent); font-weight:600; text-decoration:none;">strenovix@gmail.com</a>';
+    }, 2000);
+  });
+
+  if (devEmail) devEmail.addEventListener('click', () => {
+    const original = devEmail.innerHTML;
+    devEmail.textContent = 'Copied!';
+    navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
+    setTimeout(() => {
+      devEmail.innerHTML = '<a href="mailto:strenovix@gmail.com" style="color:var(--blue-accent); font-weight:600; text-decoration:none;">strenovix@gmail.com</a>';
+    }, 2000);
+  });
+
+})();
+</script>
+
+</body>
+</html>
