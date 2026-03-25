@@ -1,715 +1,1149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>VoteAble | Official Privacy Policy — Election Management System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>VoteAble — Privacy Policy | Official Election Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --navy:        #0a1628;
+  --navy-mid:    #112240;
+  --navy-light:  #1d3461;
+  --ink:         #0f1e33;
+  --gold:        #c8952a;
+  --gold-light:  #e8b84b;
+  --gold-pale:   #fdf6e3;
+  --cream:       #f9f7f2;
+  --white:       #ffffff;
+  --border:      #e2ddd4;
+  --text-body:   #2d3748;
+  --text-mid:    #4a5568;
+  --text-light:  #718096;
+  --green:       #1a7a4a;
+  --green-bg:    #edf7f1;
+  --red:         #c0392b;
+  --red-bg:      #fdf0ef;
+  --blue-accent: #1e5fa8;
+}
 
-        body {
-            background: #f5f7fb;
-            font-family: 'Inter', sans-serif;
-            color: #1a2634;
-            line-height: 1.5;
-        }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .document-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+html { scroll-behavior: smooth; }
 
-        /* Header Section */
-        .policy-header {
-            background: linear-gradient(135deg, #0b2b3b 0%, #1a4a6f 100%);
-            border-radius: 1.5rem;
-            padding: 2.5rem 3rem;
-            margin-bottom: 2rem;
-            color: white;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
-        }
+body {
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-body);
+  line-height: 1.6;
+  font-size: 15px;
+}
 
-        .compliance-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.12);
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+/* ── Noise texture overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
 
-        .policy-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.75rem;
-        }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; position: relative; z-index: 1; }
 
-        .policy-header h1 i {
-            margin-right: 0.75rem;
-            color: #ffd966;
-        }
+/* ══════════════════════════════
+   HERO HEADER
+══════════════════════════════ */
+.hero {
+  background: var(--navy);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  position: relative;
+  box-shadow: 0 30px 60px -15px rgba(10,22,40,0.45);
+}
 
-        .policy-header .subhead {
-            font-size: 1rem;
-            opacity: 0.85;
-            margin-bottom: 1.5rem;
-            border-left: 3px solid #ffd966;
-            padding-left: 1rem;
-        }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(200,149,42,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-        .meta-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 20%;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(30,95,168,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
 
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
+.hero-inner { padding: 3rem 3.5rem; position: relative; z-index: 2; }
 
-        .meta-item i {
-            color: #ffd966;
-            width: 1.2rem;
-        }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(200,149,42,0.15);
+  border: 1px solid rgba(200,149,42,0.35);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 40px;
+  margin-bottom: 1.5rem;
+}
 
-        /* Navigation Tabs */
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            background: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 80px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e4e9f0;
-        }
+.hero-eyebrow i { font-size: 0.7rem; }
 
-        .nav-tab {
-            background: transparent;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            color: #4a5b6e;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
 
-        .nav-tab i {
-            font-size: 0.85rem;
-        }
+.hero h1 span { color: var(--gold-light); }
 
-        .nav-tab:hover {
-            background: #eef2f8;
-            color: #1a4a6f;
-        }
+.hero-desc {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  max-width: 580px;
+  padding-left: 1rem;
+  border-left: 3px solid var(--gold);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
 
-        .nav-tab.active {
-            background: #1a4a6f;
-            color: white;
-            box-shadow: 0 4px 10px rgba(26, 74, 111, 0.2);
-        }
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
 
-        /* Content Grid */
-        .policy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 1.8rem;
-        }
+.meta-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
 
-        .policy-card {
-            background: white;
-            border-radius: 1.25rem;
-            padding: 1.6rem 1.8rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-            border: 1px solid #eef2f8;
-            transition: all 0.25s ease;
-            height: 100%;
-        }
+.meta-chip i { color: var(--gold-light); font-size: 0.85rem; }
 
-        .policy-card:hover {
-            border-color: #cbdde6;
-            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
+.compliance-strip {
+  background: linear-gradient(90deg, rgba(200,149,42,0.12), rgba(30,95,168,0.12));
+  border-top: 1px solid rgba(200,149,42,0.2);
+  padding: 0.9rem 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  position: relative; z-index: 2;
+}
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.2rem;
-            border-bottom: 2px solid #eef2f8;
-            padding-bottom: 0.8rem;
-        }
+.comp-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.3px;
+}
 
-        .card-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, #1a4a6f, #0b2b3b);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.comp-badge i { font-size: 0.8rem; }
 
-        .card-icon i {
-            font-size: 1.3rem;
-            color: white;
-        }
+/* ══════════════════════════════
+   STICKY NAV
+══════════════════════════════ */
+.sticky-nav {
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  margin-bottom: 2.5rem;
+}
 
-        .card-header h2 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #0b2b3b;
-            margin: 0;
-        }
+.nav-inner {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 60px;
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  box-shadow: 0 8px 24px -8px rgba(10,22,40,0.12);
+}
 
-        .policy-card h3 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #1a4a6f;
-            margin: 1rem 0 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
+.nav-btn {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
 
-        .policy-card p, .policy-card li {
-            font-size: 0.88rem;
-            color: #2c3f4f;
-            line-height: 1.55;
-        }
+.nav-btn i { font-size: 0.75rem; }
+.nav-btn:hover { background: var(--cream); color: var(--navy); }
+.nav-btn.active { background: var(--navy); color: var(--white); box-shadow: 0 4px 12px rgba(10,22,40,0.2); }
 
-        .policy-card ul, .policy-card .list-compact {
-            padding-left: 1.2rem;
-            margin: 0.6rem 0;
-        }
+/* ══════════════════════════════
+   LAYOUT
+══════════════════════════════ */
+.policy-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
 
-        .policy-card li {
-            margin: 0.4rem 0;
-        }
+/* ══════════════════════════════
+   CARDS
+══════════════════════════════ */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  animation: fadeUp 0.5s ease both;
+}
 
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 0.8rem 0;
-        }
+.card:hover {
+  box-shadow: 0 16px 40px -12px rgba(10,22,40,0.12);
+  transform: translateY(-2px);
+}
 
-        .badge {
-            background: #eef2fa;
-            padding: 0.25rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #1a4a6f;
-        }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-        .permission-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 0.8rem 0;
-            font-size: 0.8rem;
-        }
+/* stagger children */
+.card:nth-child(1)  { animation-delay: 0.05s; }
+.card:nth-child(2)  { animation-delay: 0.10s; }
+.card:nth-child(3)  { animation-delay: 0.15s; }
+.card:nth-child(4)  { animation-delay: 0.20s; }
+.card:nth-child(5)  { animation-delay: 0.25s; }
+.card:nth-child(6)  { animation-delay: 0.30s; }
+.card:nth-child(7)  { animation-delay: 0.35s; }
+.card:nth-child(8)  { animation-delay: 0.40s; }
+.card:nth-child(9)  { animation-delay: 0.45s; }
+.card:nth-child(10) { animation-delay: 0.50s; }
 
-        .permission-table td {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eef2f8;
-        }
+.card.full { grid-column: 1 / -1; }
 
-        .permission-table td:first-child {
-            font-weight: 700;
-            width: 45%;
-            color: #1a4a6f;
-        }
+.card-head {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, #fafaf8, var(--white));
+}
 
-        .full-width {
-            grid-column: 1 / -1;
-            background: linear-gradient(135deg, #ffffff 0%, #fafcff 100%);
-            border-left: 4px solid #1a4a6f;
-        }
+.card-icon { display: none; }
 
-        .footer-note {
-            margin-top: 2.5rem;
-            background: white;
-            border-radius: 1.25rem;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            border: 1px solid #eef2f8;
-        }
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
 
-        .contact-block {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: #f8fafd;
-            padding: 0.6rem 1.2rem;
-            border-radius: 60px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
+.card-num { display: none; }
 
-        .contact-block:hover {
-            background: #eef2f8;
-        }
+.card-body {
+  padding: 1.25rem 1.5rem;
+}
 
-        .scroll-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #1a4a6f;
-            color: white;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            border: none;
-            z-index: 100;
-        }
+/* ── Typography inside cards ── */
+.card-body p {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
 
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
+.card-body p:last-child { margin-bottom: 0; }
 
-        .scroll-top:hover {
-            background: #0b2b3b;
-            transform: translateY(-3px);
-        }
+.card-body h4 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 1.1rem 0 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--gold-pale);
+}
 
-        hr {
-            margin: 1rem 0;
-            border: none;
-            border-top: 1px solid #eef2f8;
-        }
+.card-body h4:first-child { margin-top: 0; }
 
-        @media (max-width: 780px) {
-            .document-container {
-                padding: 1rem;
-            }
-            .policy-header {
-                padding: 1.5rem;
-            }
-            .policy-header h1 {
-                font-size: 1.8rem;
-            }
-            .nav-tabs {
-                border-radius: 2rem;
-                overflow-x: auto;
-                flex-wrap: nowrap;
-            }
-            .policy-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
+.card-body ul li {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.55;
+  padding: 0.3rem 0 0.3rem 1.35rem;
+  position: relative;
+  border-bottom: 1px solid var(--cream);
+}
+
+.card-body ul li:last-child { border-bottom: none; }
+
+.card-body ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  top: 0.4rem;
+}
+
+/* ── Confirm / Deny rows ── */
+.confirm-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--cream);
+}
+
+.confirm-row:last-child { border-bottom: none; }
+
+.confirm-row.yes .ci { color: var(--green); }
+.confirm-row.no  .ci { color: var(--red); }
+
+.ci { font-size: 0.9rem; margin-top: 0.15rem; flex-shrink: 0; }
+
+/* ── Tag pills ── */
+.tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.75rem 0; }
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.28rem 0.75rem;
+  border-radius: 30px;
+}
+
+.tag.outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+}
+
+.tag.green { background: var(--green-bg); color: var(--green); }
+.tag.red   { background: var(--red-bg);   color: var(--red); }
+
+/* ── Permission table ── */
+.perm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 0.5rem 0;
+}
+
+.perm-table th {
+  background: var(--navy);
+  color: var(--gold-light);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 0.55rem 0.85rem;
+  text-align: left;
+}
+
+.perm-table th:first-child { border-radius: 8px 0 0 8px; }
+.perm-table th:last-child  { border-radius: 0 8px 8px 0; }
+
+.perm-table td {
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-body);
+  vertical-align: top;
+}
+
+.perm-table tr:last-child td { border-bottom: none; }
+.perm-table td:first-child { font-weight: 600; color: var(--navy); font-family: 'DM Sans', monospace; font-size: 0.78rem; }
+
+/* ── Alert box ── */
+.alert {
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0.75rem 0;
+}
+
+.alert.info  { background: #e8f0fb; border-left: 3px solid var(--blue-accent); color: #1e3a5f; }
+.alert.warn  { background: var(--gold-pale); border-left: 3px solid var(--gold); color: #5c3b00; }
+.alert.safe  { background: var(--green-bg); border-left: 3px solid var(--green); color: #0f4028; }
+
+.alert i { font-size: 0.85rem; margin-top: 0.1rem; flex-shrink: 0; }
+
+/* ── Inline divider ── */
+.divider { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+
+/* ── Contact card full ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-box {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.contact-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: 0.6rem; }
+
+.email-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--navy);
+  color: var(--gold-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 0.6rem;
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.email-chip:hover { background: var(--navy-light); transform: translateY(-1px); }
+
+/* ── Footer ── */
+.policy-footer {
+  margin-top: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.footer-brand span { color: var(--gold); }
+
+.footer-meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+
+.footer-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.footer-tag i { color: var(--gold); }
+
+/* ── Scroll to top ── */
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  box-shadow: 0 6px 20px rgba(10,22,40,0.3);
+  z-index: 200;
+  font-size: 0.85rem;
+}
+
+.scroll-top.show { opacity: 1; visibility: visible; }
+.scroll-top:hover { background: var(--navy-light); transform: translateY(-3px); }
+
+/* ── Data safety highlight card ── */
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 0.75rem 0;
+}
+
+.safety-item {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+.safety-item .si-icon { font-size: 1.4rem; margin-bottom: 0.3rem; display: block; }
+.safety-item .si-label { font-size: 0.7rem; font-weight: 600; color: var(--text-light); letter-spacing: 0.5px; text-transform: uppercase; display: block; margin-bottom: 0.2rem; }
+.safety-item .si-val { font-size: 0.8rem; font-weight: 700; color: var(--navy); }
+.safety-item.ok  .si-val { color: var(--green); }
+.safety-item.no  .si-val { color: var(--red); }
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media (max-width: 768px) {
+  .wrap { padding: 1.25rem 1rem; }
+  .hero-inner { padding: 2rem 1.5rem; }
+  .compliance-strip { padding: 0.8rem 1.5rem; }
+  .policy-layout { grid-template-columns: 1fr; }
+  .card.full { grid-column: 1; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .safety-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-inner { border-radius: 16px; overflow-x: auto; flex-wrap: nowrap; padding: 0.5rem 0.75rem; }
+  .hero h1 { font-size: 1.7rem; }
+}
+</style>
 </head>
 <body>
 
-<div class="document-container">
-    <!-- Header Section -->
-    <div class="policy-header">
-        <div class="compliance-badge">
-            <i class="fas fa-check-circle"></i> Google Play Data Safety Ready
-            <i class="fas fa-gavel" style="margin-left: 0.5rem;"></i> DPDP Act 2023 Compliant
+<div class="wrap">
+
+  <!-- ══ HERO ══ -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <i class="fas fa-shield-halved"></i>
+        Official Legal Document — Internal Election System
+      </div>
+      <h1>Privacy Policy<br><span>VoteAble</span></h1>
+      <p class="hero-desc">
+        Election Officer Dashboard &amp; Voter Assistance Platform — Governing the collection, processing, and protection of personal data in compliance with applicable Indian law.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-chip"><i class="fas fa-mobile-screen"></i> Platform: Android (Google Play)</div>
+        <div class="meta-chip"><i class="fas fa-calendar-check"></i> Effective: March 24, 2026</div>
+        <div class="meta-chip"><i class="fas fa-code-branch"></i> Version: 1.0</div>
+        <div class="meta-chip"><i class="fas fa-building-columns"></i> Internal Government Use</div>
+      </div>
+    </div>
+    <div class="compliance-strip">
+      <div class="comp-badge"><i class="fab fa-google-play"></i> Google Play Data Safety Ready</div>
+      <div class="comp-badge"><i class="fas fa-gavel"></i> DPDP Act 2023 Compliant</div>
+      <div class="comp-badge"><i class="fas fa-lock"></i> IT Act 2000 Aligned</div>
+      <div class="comp-badge"><i class="fas fa-user-shield"></i> No Advertising · No Data Sale</div>
+    </div>
+  </div>
+
+  <!-- ══ NAV ══ -->
+  <div class="sticky-nav">
+    <div class="nav-inner" id="navInner">
+      <button class="nav-btn" data-section="about"><i class="fas fa-info-circle"></i> About</button>
+      <button class="nav-btn" data-section="data-collect"><i class="fas fa-database"></i> Data Collected</button>
+      <button class="nav-btn" data-section="purpose"><i class="fas fa-bullseye"></i> Purpose</button>
+      <button class="nav-btn" data-section="location"><i class="fas fa-location-dot"></i> Location</button>
+      <button class="nav-btn" data-section="thirdparty"><i class="fas fa-plug"></i> Third-Party</button>
+      <button class="nav-btn" data-section="security"><i class="fas fa-lock"></i> Security</button>
+      <button class="nav-btn" data-section="rights"><i class="fas fa-scale-balanced"></i> Rights</button>
+      <button class="nav-btn" data-section="contact"><i class="fas fa-envelope"></i> Contact</button>
+    </div>
+  </div>
+
+  <!-- ══ POLICY GRID ══ -->
+  <div class="policy-layout">
+
+    <!-- 1. About VoteAble -->
+    <div class="card" id="about">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-landmark"></i></div>
+        <div>
+          <span class="card-num">Section 01</span>
+          <div class="card-title">About VoteAble</div>
         </div>
-        <h1>
-            <i class="fas fa-file-alt"></i> Official Privacy Policy
-        </h1>
-        <div class="subhead">
-            VoteAble — Election Officer Dashboard & Voter Assistance System
+      </div>
+      <div class="card-body">
+        <p>VoteAble is a secure, government-grade election management and voter assistance platform exclusively deployed for authorized election personnel. The system is not a consumer product and is restricted to verified officers of the election administration.</p>
+        <h4>Authorized User Roles</h4>
+        <ul>
+          <li>Booth Level Officers (BLO)</li>
+          <li>Returning Officers (RO)</li>
+          <li>Assistant Returning Officers (ARO)</li>
+          <li>District Super Administrators</li>
+        </ul>
+        <div class="alert info">
+          <i class="fas fa-circle-info"></i>
+          <span>VoteAble facilitates field-level coordination, voter assistance tracking, and geospatial visualization of voter needs — particularly for Differently Abled Persons (DAP).</span>
         </div>
-        <div class="meta-grid">
-            <div class="meta-item"><i class="fas fa-mobile-alt"></i> Platform: Android (Google Play)</div>
-            <div class="meta-item"><i class="fas fa-calendar-alt"></i> Effective: March 24, 2026</div>
-            <div class="meta-item"><i class="fas fa-code-branch"></i> Version: 1.0</div>
-            <div class="meta-item"><i class="fas fa-shield-alt"></i> Internal Use System</div>
-        </div>
+        <hr class="divider">
+        <p style="font-size:0.82rem; color:var(--text-mid);">
+          <strong>System Owner:</strong> Election Administration (Internal Use)<br>
+          <strong>Developer Contact:</strong> <span id="devEmail" style="color:var(--blue-accent); cursor:pointer; font-weight:600;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="88fbfcfaede6e7fee1f0c8efe5e9e1e4a6ebe7e5">[email&#160;protected]</a></span>
+        </p>
+      </div>
     </div>
 
-    <!-- Navigation Tabs -->
-    <div class="nav-tabs" id="navTabs">
-        <button class="nav-tab" data-section="about"><i class="fas fa-info-circle"></i> About</button>
-        <button class="nav-tab" data-section="data-collect"><i class="fas fa-database"></i> Data Collection</button>
-        <button class="nav-tab" data-section="purpose"><i class="fas fa-chart-line"></i> Purpose</button>
-        <button class="nav-tab" data-section="location"><i class="fas fa-map-marker-alt"></i> Location</button>
-        <button class="nav-tab" data-section="thirdparty"><i class="fas fa-plug"></i> Third-Party</button>
-        <button class="nav-tab" data-section="security"><i class="fas fa-lock"></i> Security</button>
-        <button class="nav-tab" data-section="rights"><i class="fas fa-user-check"></i> User Rights</button>
-        <button class="nav-tab" data-section="contact"><i class="fas fa-envelope"></i> Contact</button>
+    <!-- 2. Data Collected -->
+    <div class="card" id="data-collect">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
+        <div>
+          <span class="card-num">Section 02</span>
+          <div class="card-title">Data Collected</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h4>Identity &amp; Administrative</h4>
+        <ul>
+          <li>Full Name (voters and officers)</li>
+          <li>Mobile Number &amp; Voter ID (EPIC Number)</li>
+          <li>Gender, Age, and Date of Birth</li>
+        </ul>
+        <h4>Location &amp; Mapping</h4>
+        <ul>
+          <li>Voter location (Latitude &amp; Longitude)</li>
+          <li>Officer real-time location (active sessions only)</li>
+          <li>Address: Block, Taluk, District, Pincode</li>
+        </ul>
+        <h4>Sensitive Assistance Data</h4>
+        <ul>
+          <li>Disability type and assistance requirements</li>
+          <li>Voting intent (Will Vote / Won't Vote)</li>
+          <li>Assistance status and resolution tracking</li>
+        </ul>
+        <h4>Operational Metadata</h4>
+        <ul>
+          <li>Timestamps of updates and query resolution status</li>
+          <li>Officer assignment records</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="policy-grid">
-        <!-- Section 1: About VoteAble -->
-        <div id="about" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-landmark"></i></div>
-                <h2>1. About VoteAble</h2>
-            </div>
-            <p>VoteAble is a secure election management and voter assistance platform designed for authorized election officials including:</p>
-            <ul>
-                <li>Booth Level Officers (BLO)</li>
-                <li>Returning Officers (RO)</li>
-                <li>Assistant Returning Officers (ARO)</li>
-                <li>Super Admin</li>
-            </ul>
-            <p>The system enables field-level coordination, voter assistance tracking, and geospatial visualization of voter needs, especially for Differently Abled Persons (DAP).</p>
-            <hr>
-            <p><strong>System Owner:</strong> Election Administration (Internal Use System)<br>
-            <strong>Developer Contact:</strong> <span id="devEmail" style="cursor: pointer; color: #1a4a6f; font-weight: 500;">strenovix@gmail.com</span></p>
+    <!-- 3. Purpose of Processing -->
+    <div class="card" id="purpose">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+        <div>
+          <span class="card-num">Section 03</span>
+          <div class="card-title">Purpose of Processing</div>
         </div>
-
-        <!-- Section 2: Categories of Data Collected -->
-        <div id="data-collect" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-clipboard-list"></i></div>
-                <h2>2. Data Collected</h2>
-            </div>
-            <h3>Identity & Administrative Data</h3>
-            <ul><li>Name (Voters and Officers)</li><li>Mobile Number</li><li>Voter ID (EPIC Number)</li><li>Gender, Age and Date of Birth</li></ul>
-            <h3>Location & Mapping Data</h3>
-            <ul><li>Voter location (Latitude & Longitude)</li><li>Officer real-time location (when app in active use)</li><li>Address data (Block, Taluk, District, Pincode)</li></ul>
-            <h3>Assistance & Sensitive Data</h3>
-            <ul><li>Disability type</li><li>Assistance requirements</li><li>Voting intent (Will Vote / Won’t Vote)</li><li>Assistance status and resolution tracking</li></ul>
-            <h3>Operational Metadata</h3>
-            <ul><li>Timestamps of updates, Query resolution status, Officer assignments</li></ul>
+      </div>
+      <div class="card-body">
+        <p>All data processed within VoteAble is used exclusively for the lawful administration of elections and provision of voter assistance services. There is no secondary commercial use of any kind.</p>
+        <ul>
+          <li>Identifying voters who require disability-related assistance</li>
+          <li>Displaying Differently Abled Persons (DAP) on secure officer map interfaces</li>
+          <li>Enabling election officers to locate and assist voters efficiently</li>
+          <li>Managing voter queries and tracking resolution progress</li>
+          <li>Supporting decision-making via administrative dashboards</li>
+          <li>Coordinating field-level activities on election day</li>
+        </ul>
+        <div class="tags">
+          <span class="tag red"><i class="fas fa-ban"></i> No Commercial Use</span>
+          <span class="tag red"><i class="fas fa-ban"></i> No Advertising</span>
+          <span class="tag red"><i class="fas fa-ban"></i> No Profiling</span>
+          <span class="tag red"><i class="fas fa-ban"></i> No Data Sale</span>
         </div>
-
-        <!-- Section 3: Purpose of Data Processing -->
-        <div id="purpose" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-chart-simple"></i></div>
-                <h2>3. Purpose of Processing</h2>
-            </div>
-            <ul>
-                <li>Mapping voters and identifying assistance requirements</li>
-                <li>Displaying Differently Abled Persons (DAP) on secure map interfaces</li>
-                <li>Enabling officers to locate and assist voters efficiently</li>
-                <li>Managing voter queries and tracking resolution status</li>
-                <li>Supporting decision-making via dashboards and analytics</li>
-                <li>Coordinating field-level election activities</li>
-            </ul>
-            <div class="badge-container"><span class="badge"><i class="fas fa-ban"></i> No Commercial Use</span><span class="badge">No Advertising</span><span class="badge">No Profiling</span></div>
-        </div>
-
-        <!-- Section 4: Location Data Usage Disclosure -->
-        <div id="location" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-location-dot"></i></div>
-                <h2>4. Location Transparency</h2>
-            </div>
-            <p><strong>Important — Location Usage</strong></p>
-            <ul>
-                <li>Officer location collected only during active app usage</li>
-                <li>Used to show nearby voters requiring assistance</li>
-                <li>Enables real-time operational coordination</li>
-                <li>Not used for background tracking</li>
-            </ul>
-            <p>Voter locations are stored as part of official election records and used for mapping and assistance planning.</p>
-        </div>
-
-        <!-- Section 5: Third-Party Services -->
-        <div id="thirdparty" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-cloud"></i></div>
-                <h2>5. Third-Party Services</h2>
-            </div>
-            <div class="badge-container"><span class="badge"><i class="fab fa-google"></i> Google Maps Platform</span><span class="badge"><i class="fas fa-fire"></i> Firebase Cloud Messaging</span><span class="badge">Railway.app Hosting</span><span class="badge">PostgreSQL</span></div>
-            <p>These services operate under strict data processing agreements and do not use your data for independent purposes.</p>
-        </div>
-
-        <!-- Section 6: Data Sharing Policy -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-handshake"></i></div>
-                <h2>6. Data Sharing</h2>
-            </div>
-            <p>Data is shared only with authorized election officials and internal administrative systems.</p>
-            <ul>
-                <li><i class="fas fa-times-circle" style="color:#c00;"></i> No sale of user data</li>
-                <li><i class="fas fa-times-circle" style="color:#c00;"></i> No sharing with advertisers</li>
-                <li><i class="fas fa-times-circle" style="color:#c00;"></i> No access to political parties or private entities</li>
-            </ul>
-        </div>
-
-        <!-- Section 7: Permissions Used -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-percent"></i></div>
-                <h2>7. Permissions Used</h2>
-            </div>
-            <table class="permission-table">
-                <tr><td>ACCESS_FINE_LOCATION</td><td>Show precise location on map</td></tr>
-                <tr><td>ACCESS_COARSE_LOCATION</td><td>Approximate fallback location</td></tr>
-                <tr><td>INTERNET</td><td>Sync data with secure backend</td></tr>
-            </table>
-            <p><i class="fas fa-info-circle"></i> Location access is foreground only — never in background.</p>
-        </div>
-
-        <!-- Section 8: Data Storage & Retention -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-database"></i></div>
-                <h2>8. Storage & Retention</h2>
-            </div>
-            <p>Data stored securely in PostgreSQL database hosted via Railway infrastructure. Retention aligned with election operational requirements. Officer location is not permanently stored, only used during active sessions.</p>
-        </div>
-
-        <!-- Section 9: User Rights & Control -->
-        <div id="rights" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-gavel"></i></div>
-                <h2>9. User Rights</h2>
-            </div>
-            <ul>
-                <li>Access system data relevant to role</li>
-                <li>Update voter assistance status</li>
-                <li>Request corrections through official channels</li>
-            </ul>
-            <p>Data modification governed by administrative privileges.</p>
-        </div>
-
-        <!-- Section 10: Security Measures -->
-        <div id="security" class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-shield-hooded"></i></div>
-                <h2>10. Security Measures</h2>
-            </div>
-            <ul>
-                <li>HTTPS (TLS encryption) for all communication</li>
-                <li>Role-based access control</li>
-                <li>Secured database environment</li>
-                <li>Restricted admin access</li>
-                <li>No sensitive data stored locally on devices</li>
-            </ul>
-        </div>
-
-        <!-- Section 11: Children’s Privacy -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-child"></i></div>
-                <h2>11. Children’s Privacy</h2>
-            </div>
-            <p>VoteAble is strictly intended for registered voters (18+) and authorized election officials. We do not knowingly collect or process data from minors.</p>
-        </div>
-
-        <!-- Section 12: Sensitive Data Handling -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                <h2>12. Sensitive Data Notice</h2>
-            </div>
-            <p>Disability-related information is classified as sensitive personal data. Collected only for providing assistance, access restricted to authorized officials, used strictly for election support services.</p>
-        </div>
-
-        <!-- Section 13: Google Play Data Safety -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fab fa-google-play"></i></div>
-                <h2>13. Google Play Data Safety</h2>
-            </div>
-            <ul>
-                <li>Data Collected: Yes — Personal info, location, operational data</li>
-                <li>Location Usage: Foreground only</li>
-                <li>Data Sharing: Limited to essential services (Google Maps)</li>
-                <li>Encryption: Yes</li>
-                <li>Data Selling: No | Advertising: No</li>
-            </ul>
-        </div>
-
-        <!-- Section 14: Legal Compliance -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
-                <h2>14. Legal Compliance</h2>
-            </div>
-            <p>Digital Personal Data Protection Act, 2023 (India) & Information Technology Act, 2000.</p>
-        </div>
-
-        <!-- Section 15: Policy Updates -->
-        <div class="policy-card">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-clock"></i></div>
-                <h2>15. Policy Updates</h2>
-            </div>
-            <p>This Privacy Policy may be updated periodically. Changes will be reflected with a revised effective date. Continued use of the app implies acceptance of updates.</p>
-        </div>
-
-        <!-- Section 16 & 17: Contact + Consent (Full width) -->
-        <div id="contact" class="policy-card full-width">
-            <div class="card-header">
-                <div class="card-icon"><i class="fas fa-headset"></i></div>
-                <h2>16. Contact & Consent</h2>
-            </div>
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
-                <div>
-                    <p><strong>Contact Information</strong><br>Email: <span id="contactEmail" style="cursor: pointer; font-weight: 600; color: #1a4a6f;">strenovix@gmail.com</span></p>
-                    <div class="contact-block" id="copyContactBtn" style="margin-top: 0.8rem; display: inline-flex;">
-                        <i class="fas fa-copy"></i> Copy email address
-                    </div>
-                </div>
-                <div>
-                    <p><strong>Consent Acknowledgment</strong><br>By accessing and using VoteAble, you acknowledge and agree to this Privacy Policy. This consent is fundamental to election facilitation and secure democratic infrastructure.</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
-    <div class="footer-note">
-        <div><i class="fas fa-vote-yea"></i> VoteAble — Integrity | Accessibility | Innovation</div>
-        <div><i class="fas fa-check-circle"></i> DPDP Act 2023 Compliant · Version 1.0</div>
+    <!-- 4. Location Transparency -->
+    <div class="card" id="location">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-location-dot"></i></div>
+        <div>
+          <span class="card-num">Section 04</span>
+          <div class="card-title">Location Transparency</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="alert warn">
+          <i class="fas fa-triangle-exclamation"></i>
+          <strong>Important Disclosure:</strong> This app collects precise location data from election officers during active foreground use only.
+        </div>
+        <h4>Officer Location Usage</h4>
+        <ul>
+          <li>Collected only while app is open and in active use (foreground)</li>
+          <li>Used solely to show proximity to voters requiring assistance</li>
+          <li>Enables real-time operational coordination between field officers</li>
+          <li><strong>Never collected in the background</strong></li>
+          <li><strong>Not permanently stored</strong> — session-use only</li>
+        </ul>
+        <h4>Voter Location</h4>
+        <p>Voter location data is stored as part of official election records and is used exclusively for mapping assistance requirements and dispatch planning. Access is restricted to authorized officers by role-based controls.</p>
+        <div class="alert safe">
+          <i class="fas fa-shield-halved"></i>
+          Location data is never shared with third parties, advertisers, or any external commercial entities.
+        </div>
+      </div>
     </div>
-</div>
 
-<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+    <!-- 5. Third-Party Services -->
+    <div class="card" id="thirdparty">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-cloud"></i></div>
+        <div>
+          <span class="card-num">Section 05</span>
+          <div class="card-title">Third-Party Services</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>VoteAble integrates only with essential infrastructure and platform services required for its operation. No marketing, analytics, or advertising SDKs are included.</p>
+        <div class="tags">
+          <span class="tag"><i class="fab fa-google"></i> Google Maps Platform</span>
+          <span class="tag"><i class="fas fa-fire"></i> Firebase (FCM)</span>
+          <span class="tag"><i class="fas fa-server"></i> Railway.app Hosting</span>
+          <span class="tag"><i class="fas fa-database"></i> PostgreSQL</span>
+        </div>
+        <h4>Data Processing Basis</h4>
+        <p>All third-party services operate under strict data processing agreements. They receive only the minimum data necessary for their function and are contractually prohibited from using it for any independent purpose, including advertising or analytics.</p>
+        <div class="alert info">
+          <i class="fas fa-circle-info"></i>
+          Google Maps Platform is used solely for displaying voter and officer locations on secure administrative map views. No user data is shared with Google for advertising purposes.
+        </div>
+      </div>
+    </div>
 
-<script>
-    (function() {
-        const navButtons = document.querySelectorAll('.nav-tab');
-        
-        function scrollToSection(sectionId) {
-            const target = document.getElementById(sectionId);
-            if (target) {
-                const offset = 90;
-                const elementPos = target.getBoundingClientRect().top + window.pageYOffset;
-                window.scrollTo({
-                    top: elementPos - offset,
-                    behavior: 'smooth'
-                });
-                target.style.transition = 'all 0.2s';
-                target.style.boxShadow = '0 0 0 3px rgba(26, 74, 111, 0.3)';
-                setTimeout(() => {
-                    target.style.boxShadow = '';
-                }, 800);
-            }
-        }
-        
-        navButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const section = btn.getAttribute('data-section');
-                if (section) {
-                    scrollToSection(section);
-                }
-                navButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-        
-        const sections = ['about', 'data-collect', 'purpose', 'location', 'thirdparty', 'security', 'rights', 'contact'];
-        function highlightActiveNav() {
-            let current = '';
-            const scrollPos = window.scrollY + 120;
-            for (let id of sections) {
-                const el = document.getElementById(id);
-                if (el) {
-                    const top = el.offsetTop;
-                    const bottom = top + el.offsetHeight;
-                    if (scrollPos >= top && scrollPos < bottom) {
-                        current = id;
-                        break;
-                    }
-                }
-            }
-            navButtons.forEach(btn => {
-                const btnSection = btn.getAttribute('data-section');
-                if (btnSection === current) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', highlightActiveNav);
-        highlightActiveNav();
-        
-        const scrollBtn = document.getElementById('scrollTopBtn');
-        function toggleScrollBtn() {
-            if (window.scrollY > 400) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
-        }
-        window.addEventListener('scroll', toggleScrollBtn);
-        toggleScrollBtn();
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        const copyBtn = document.getElementById('copyContactBtn');
-        const emailSpan = document.getElementById('contactEmail');
-        function copyEmail() {
-            const email = 'strenovix@gmail.com';
-            navigator.clipboard.writeText(email).then(() => {
-                const originalHtml = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalHtml;
-                }, 2000);
-            }).catch(() => alert('Email: strenovix@gmail.com'));
-        }
-        if (copyBtn) copyBtn.addEventListener('click', copyEmail);
-        if (emailSpan) emailSpan.addEventListener('click', copyEmail);
-        
-        const devEmailSpan = document.getElementById('devEmail');
-        if (devEmailSpan) {
-            devEmailSpan.addEventListener('click', () => {
-                navigator.clipboard.writeText('strenovix@gmail.com');
-                const original = devEmailSpan.innerHTML;
-                devEmailSpan.innerHTML = 'Copied!';
-                setTimeout(() => { devEmailSpan.innerHTML = original; }, 1500);
-            });
-        }
-        
-        const cards = document.querySelectorAll('.policy-card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                const iconDiv = card.querySelector('.card-icon i');
-                if (iconDiv) iconDiv.style.transform = 'scale(1.05)';
-            });
-            card.addEventListener('mouseleave', () => {
-                const iconDiv = card.querySelector('.card-icon i');
-                if (iconDiv) iconDiv.style.transform = 'scale(1)';
-            });
-        });
-    })();
-</script>
-</body>
-</html>
+    <!-- 6. Data Sharing Policy -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-share-nodes"></i></div>
+        <div>
+          <span class="card-num">Section 06</span>
+          <div class="card-title">Data Sharing Policy</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>VoteAble maintains a strict data minimization and non-disclosure posture. Data is shared only within the bounds necessary for election administration.</p>
+        <h4>Permitted Sharing</h4>
+        <div class="confirm-row yes"><i class="fas fa-check-circle ci"></i><span>Authorized election officials within the system (role-restricted)</span></div>
+        <div class="confirm-row yes"><i class="fas fa-check-circle ci"></i><span>Internal administrative systems for operational coordination</span></div>
+        <div class="confirm-row yes"><i class="fas fa-check-circle ci"></i><span>Infrastructure providers under data processing agreements</span></div>
+        <h4>Strictly Prohibited</h4>
+        <div class="confirm-row no"><i class="fas fa-times-circle ci"></i><span>Sale or monetization of any user data</span></div>
+        <div class="confirm-row no"><i class="fas fa-times-circle ci"></i><span>Sharing with advertisers or marketing platforms</span></div>
+        <div class="confirm-row no"><i class="fas fa-times-circle ci"></i><span>Access by political parties, candidates, or private entities</span></div>
+        <div class="confirm-row no"><i class="fas fa-times-circle ci"></i><span>Cross-app tracking or behavioral profiling</span></div>
+      </div>
+    </div>
+
+    <!-- 7. Permissions Used -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-mobile-screen-button"></i></div>
+        <div>
+          <span class="card-num">Section 07</span>
+          <div class="card-title">App Permissions</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>VoteAble requests only the minimum permissions necessary for its core functionality. No unnecessary permissions are requested.</p>
+        <table class="perm-table">
+          <thead>
+            <tr>
+              <th>Permission</th>
+              <th>Justification</th>
+              <th>Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ACCESS_FINE_LOCATION</td>
+              <td>Precise officer location for map coordination</td>
+              <td><span class="tag green" style="font-size:0.65rem;">Yes</span></td>
+            </tr>
+            <tr>
+              <td>ACCESS_COARSE_LOCATION</td>
+              <td>Fallback when GPS unavailable</td>
+              <td><span class="tag outline" style="font-size:0.65rem;">Optional</span></td>
+            </tr>
+            <tr>
+              <td>INTERNET</td>
+              <td>Syncing data with secure backend server</td>
+              <td><span class="tag green" style="font-size:0.65rem;">Yes</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="alert safe">
+          <i class="fas fa-shield-halved"></i>
+          All location access is strictly <strong>foreground only</strong>. The app never accesses device location when running in the background or after the session ends.
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Data Storage & Retention -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-hard-drive"></i></div>
+        <div>
+          <span class="card-num">Section 08</span>
+          <div class="card-title">Storage &amp; Retention</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h4>Storage Infrastructure</h4>
+        <p>All data is stored in a secured PostgreSQL database hosted via Railway.app infrastructure. All connections are encrypted using TLS. No sensitive data is stored in plaintext or locally on user devices.</p>
+        <h4>Retention Policy</h4>
+        <ul>
+          <li>Voter assistance data: retained for the duration of the election cycle</li>
+          <li>Officer session/location data: <strong>not permanently stored</strong> — purged after session</li>
+          <li>Operational logs: retained as required by election administration guidelines</li>
+          <li>Data purge requests processed through official administrative channels</li>
+        </ul>
+        <div class="alert info">
+          <i class="fas fa-circle-info"></i>
+          Retention timelines are aligned with official election operational requirements and applicable data protection regulations.
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. User Rights -->
+    <div class="card" id="rights">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-scale-balanced"></i></div>
+        <div>
+          <span class="card-num">Section 09</span>
+          <div class="card-title">User Rights &amp; DPDP Act</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>Under the Digital Personal Data Protection Act, 2023 (India), data principals are entitled to the following rights, exercisable through official administrative channels:</p>
+        <ul>
+          <li><strong>Right to Access:</strong> View personal data held about you in the system</li>
+          <li><strong>Right to Correction:</strong> Request correction of inaccurate or incomplete data</li>
+          <li><strong>Right to Erasure:</strong> Request deletion of data where legally permissible</li>
+          <li><strong>Right to Grievance Redressal:</strong> Raise concerns with the designated Data Fiduciary</li>
+          <li><strong>Right to Nominate:</strong> Nominate a representative in case of incapacity</li>
+        </ul>
+        <p>Data modification is governed by assigned administrative role privileges. All requests are processed through formal election administrative channels.</p>
+      </div>
+    </div>
+
+    <!-- 10. Security Measures -->
+    <div class="card" id="security">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+        <div>
+          <span class="card-num">Section 10</span>
+          <div class="card-title">Security Measures</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>VoteAble implements industry-standard security controls appropriate for a government election management system.</p>
+        <h4>Technical Controls</h4>
+        <ul>
+          <li>HTTPS / TLS encryption for all client-server communication</li>
+          <li>Role-based access control (RBAC) — officers access only data relevant to their role</li>
+          <li>Secured and isolated database environment</li>
+          <li>No sensitive data cached or stored locally on Android devices</li>
+          <li>Authentication required before any data access</li>
+        </ul>
+        <h4>Operational Controls</h4>
+        <ul>
+          <li>Restricted administrative access — principle of least privilege</li>
+          <li>Audit trails for data access and modifications</li>
+          <li>Regular security reviews aligned with election schedules</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 11. Sensitive Data Notice -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-heart-pulse"></i></div>
+        <div>
+          <span class="card-num">Section 11</span>
+          <div class="card-title">Sensitive Data Handling</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="alert warn">
+          <i class="fas fa-triangle-exclamation"></i>
+          Disability-related information constitutes <strong>Sensitive Personal Data</strong> under the DPDP Act 2023.
+        </div>
+        <h4>Processing Basis</h4>
+        <ul>
+          <li>Collected solely to provide voting assistance to eligible individuals</li>
+          <li>Access is strictly restricted to authorized election officers</li>
+          <li>Used exclusively for election day support and logistics</li>
+          <li>Never shared with political entities, parties, or commercial bodies</li>
+          <li>Handled with heightened security and access controls</li>
+        </ul>
+        <p>This processing is conducted on the basis of lawful public interest and official authority for election administration purposes.</p>
+      </div>
+    </div>
+
+    <!-- 12. Children's Privacy -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-child-reaching"></i></div>
+        <div>
+          <span class="card-num">Section 12</span>
+          <div class="card-title">Children's Privacy</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>VoteAble is designed exclusively for two categories of users — both of whom must be adults:</p>
+        <ul>
+          <li><strong>Registered voters</strong> — eligible voters aged 18 years and above</li>
+          <li><strong>Authorized election officials</strong> — government-appointed adult officers</li>
+        </ul>
+        <div class="alert safe">
+          <i class="fas fa-shield-halved"></i>
+          We do not knowingly collect, store, or process any personal data from individuals under the age of 18. If such data is discovered, it will be immediately deleted. VoteAble is not directed at minors in any capacity.
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. Google Play Data Safety -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fab fa-google-play"></i></div>
+        <div>
+          <span class="card-num">Section 13</span>
+          <div class="card-title">Google Play Data Safety</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>The following summarizes the information declared in the Google Play Data Safety Section:</p>
+        <div class="safety-grid">
+          <div class="safety-item ok">
+            <span class="si-icon">🔒</span>
+            <span class="si-label">Encryption</span>
+            <span class="si-val">In Transit</span>
+          </div>
+          <div class="safety-item no">
+            <span class="si-icon">📢</span>
+            <span class="si-label">Advertising</span>
+            <span class="si-val">None</span>
+          </div>
+          <div class="safety-item no">
+            <span class="si-icon">💰</span>
+            <span class="si-label">Data Sale</span>
+            <span class="si-val">Never</span>
+          </div>
+          <div class="safety-item ok">
+            <span class="si-icon">📍</span>
+            <span class="si-label">Location</span>
+            <span class="si-val">Foreground</span>
+          </div>
+          <div class="safety-item no">
+            <span class="si-icon">🕵️</span>
+            <span class="si-label">Tracking</span>
+            <span class="si-val">None</span>
+          </div>
+          <div class="safety-item ok">
+            <span class="si-icon">👮</span>
+            <span class="si-label">Purpose</span>
+            <span class="si-val">Gov. Use</span>
+          </div>
+        </div>
+        <h4>Data Collected (Play Store Declaration)</h4>
+        <ul>
+          <li>Personal information (name, contact details, voter ID)</li>
+          <li>Precise location (foreground, officer use only)</li>
+          <li>App activity and operational metadata</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 14. Legal Compliance -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-gavel"></i></div>
+        <div>
+          <span class="card-num">Section 14</span>
+          <div class="card-title">Legal Compliance</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>VoteAble is designed and operated in full compliance with the following applicable laws and regulations:</p>
+        <ul>
+          <li><strong>Digital Personal Data Protection Act, 2023 (DPDP Act)</strong> — India's primary data protection legislation governing the processing of digital personal data</li>
+          <li><strong>Information Technology Act, 2000</strong> — governing cybersecurity and data handling in India</li>
+          <li><strong>Representation of the People Act, 1950 &amp; 1951</strong> — governing the conduct of elections in India</li>
+          <li><strong>Google Play Developer Program Policies</strong> — compliance with all applicable store policies including Data Safety requirements</li>
+        </ul>
+        <div class="alert info">
+          <i class="fas fa-circle-info"></i>
+          This application operates under the lawful authority of election administration and processes data on the basis of public task / official authority as recognized under the DPDP Act.
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. Policy Updates -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-rotate"></i></div>
+        <div>
+          <span class="card-num">Section 15</span>
+          <div class="card-title">Policy Updates</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p>This Privacy Policy may be revised periodically to reflect changes in our practices, legal requirements, or the features of VoteAble. All material changes will be communicated through the following means:</p>
+        <ul>
+          <li>Updated effective date published on this page</li>
+          <li>In-app notification for significant changes</li>
+          <li>Communication through official election administration channels</li>
+        </ul>
+        <p>Continued use of VoteAble following notification of updates constitutes acceptance of the revised Privacy Policy. We encourage users to review this policy periodically.</p>
+        <div class="alert warn">
+          <i class="fas fa-clock"></i>
+          Current version: <strong>1.0</strong> — Effective: <strong>March 24, 2026</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16. Contact + Consent (full width) -->
+    <div class="card full" id="contact">
+      <div class="card-head">
+        <div class="card-icon"><i class="fas fa-headset"></i></div>
+        <div>
+          <span class="card-num">Section 16</span>
+          <div class="card-title">Contact &amp; Consent</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="contact-grid">
+          <div class="contact-box">
+            <h4>Contact the Data Controller</h4>
+            <p style="font-size:0.85rem; color:var(--text-mid); margin-bottom:0.5rem;">For any privacy-related inquiries, data access requests, grievances, or corrections, please reach out via:</p>
+            <p style="font-size:0.875rem;"><strong>Email:</strong> <span id="contactEmail" style="color:var(--blue-accent); font-weight:600; cursor:pointer;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deadaaacbbb0b1a8b7a69eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</a></span></p>
+            <p style="font-size:0.875rem; margin-top:0.4rem;"><strong>Response Time:</strong> Within 72 hours of receiving a request</p>
+            <button class="email-chip" id="copyBtn"><i class="fas fa-copy"></i> Copy Email Address</button>
+          </div>
+          <div class="contact-box">
+            <h4>Consent Acknowledgment</h4>
+            <p style="font-size:0.875rem; line-height:1.65;">By accessing, installing, or using VoteAble, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy. This agreement is a prerequisite for participation in the election facilitation system.</p>
+            <p style="font-size:0.875rem; margin-top:0.6rem;">Use of this application constitutes your informed consent to the collection and processing of personal data as described herein, in furtherance of democratic election processes.</p>
+            <div class="tags" style="margin-top:0.75rem;">
+              <span class="tag green"><i class="fas fa-check"></i> Informed Consent</span>
+              <span class="tag green"><i class="fas fa-check"></i> Lawful Basis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /policy-layout -->
+
+  <!-- ══ FOOTER ══ -->
+  <div class="policy-footer">
+    <div class="footer-brand">Vote<span>Able</span> <span style="font-size:0.75rem; font-weight:400; color:var(--text-light); font-family:'DM Sans', sans-serif;">— Privacy Policy v1.0</span></div>
+    <div class="footer-meta">
+      <span class="footer-tag"><i class="fas fa-shield-halved"></i> DPDP Act 2023</span>
+      <span class="footer-tag"><i class="fab fa-google-play"></i> Play Store Compliant</span>
+      <span class="footer-tag"><i class="fas fa-calendar"></i> Effective March 24, 2026</span>
+      <span class="footer-tag"><i class="fas fa-lock"></i> TLS Encrypted</span>
+    </div>
+  </div>
+
+</div><!-- /wrap -->
+
+<button class="scroll-top" id="scrollTop"><i class="fas fa-arrow-up"></i></button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function () {
+  /* ── Nav highlight ── */
+  const navBtns = document.querySelectorAll('.nav-btn');
+  const sectionIds = ['about','data-collect','purpose','location','thirdparty','security','rights','contact'];
+
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.section;
+      const el = document.getElementById(id);
+      if (!el) return;
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+      navBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  function updateNav() {
+    let active = '';
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top < 140) active = id;
+    }
+    navBtns.forEach(b => {
+      b.classList.toggle('active', b.dataset.section === active);
+    });
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
+  /* ── Scroll to top ── */
+  const topBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    topBtn.classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+  topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ── Copy email ── */
+  function copyEmail(btn, label) {
+    navigator.clipboard.writeText('strenovix@gmail.com').then(() => {
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<i class="fas fa-check"></i> ' + (label || 'Copied!');
+      setTimeout(() => { btn.innerHTML = orig; }, 2000);
+    }).catch(() => alert('Email: strenovix@gmail.com'));
+  }
+
+  const copyBtn = document.getElementById('copyBtn');
+  const contactEmail = document.getElementById('contactEmail');
+  const devEmail = document.getElementById('devEmail');
+
+  if (copyBtn) copyBtn.addEventListener('click', () => copyEmail(copyBtn, 'Copied!'));
+  if (contactEmail) contactEmail.addEventListener('click', () => {
+    const orig = contactEmail.textContent;
+    contactEmail.textContent = 'Copied!';
+    navigator.clipboard.writeText('strenovix@gmail.com').catch(() => {});
+    setTimeout(() => { contact
